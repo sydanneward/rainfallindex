@@ -52,7 +52,7 @@ async function getRequest(url) {
 
 async function getRainfallData(zipcode, startDate, endDate) {
     const limit = 1000; 
-    const url = `${apiEndpoint}?datasetid=GHCND&locationid=ZIP:${zipcode}&startdate=${startDate}&enddate=${endDate}&datatypeid=PRCP&limit=${limit}`;
+    const url = `${apiEndpoint}?datasetid=GHCND&locationid=ZIP:${zipcode}&startdate=${startDate}&enddate=${endDate}&limit=${limit}`;
     const data = await getRequest(url);
     return data.results ? data.results.map(item => ({
         date: item.date,
